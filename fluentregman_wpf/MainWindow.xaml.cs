@@ -25,5 +25,13 @@ namespace fluentregman_wpf
             InitializeComponent();
             MainFrame.Content = new Page1();
         }
+
+        private void Win_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
     }
 }

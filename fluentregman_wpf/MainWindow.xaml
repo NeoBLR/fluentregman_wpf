@@ -7,11 +7,21 @@
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         mc:Ignorable="d"
         fw:AcrylicWindow.NoiseOpacity="0"
-        fw:AcrylicWindow.TintOpacity="0.3"
+        fw:AcrylicWindow.TintOpacity="1"
         fw:AcrylicWindow.AcrylicWindowStyle="None"
+        fw:AcrylicWindow.TintColor="#7F1C1A32"
         Title="Главная)" Height="350" Width="525" MinHeight="350" MinWidth="525" Icon=".\img\icon.png">
     <StackPanel>
-        <Grid></Grid>
+        <Grid Height="25" MouseDown="Win_MouseDown">
+            <Rectangle RadiusX="5" RadiusY="5" Height="50" Margin="0">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="1,0">
+                        <GradientStop Color="#FFFFE53B" Offset="0"/>
+                        <GradientStop Color="#FFFC007A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
