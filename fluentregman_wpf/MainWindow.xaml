@@ -12,7 +12,11 @@
         fw:AcrylicWindow.TintColor="#7F1C1A32"
         fw:AcrylicWindow.FallbackColor="#7F1C1A32"  
         WindowStyle="None"
-        Title="Главная)" Height="350" Width="525" MinHeight="350" MinWidth="525" Icon=".\img\icon.png" Style="{DynamicResource WinStyle}" fw:AcrylicWindow.Enabled="True">
+        BorderThickness="0"
+        x:Name="WindowMain"
+        Style="{DynamicResource winreg}"
+        fw:AcrylicWindow.Enabled="True"
+        Title="Главная)" Height="350" Width="525" MinHeight="350" MinWidth="525" Icon=".\img\icon.png"  >
     <Window.Resources>
         <ControlTemplate x:Key="WindowTemplateKey" TargetType="{x:Type Window}">
             <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
@@ -33,6 +37,27 @@
                 </MultiTrigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+
+        <Style x:Key="winreg" TargetType="{x:Type Window}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <Border CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <AdornerDecorator>
+                                <ContentPresenter/>
+                            </AdornerDecorator>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="ResizeMode" Value="CanResizeWithGrip">
+                    <Setter Property="Template" Value="{StaticResource WindowTemplateKey}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <Style x:Key="WinStyle" TargetType="{x:Type Window}">
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
             <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
@@ -66,6 +91,8 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
+
+            <Label x:Name="TitleWinL" Content="{Binding Title, ElementName=WindowMain}" HorizontalAlignment="Center" Foreground="White" />
         </Grid>
         <Grid>
             <Grid.ColumnDefinitions>

@@ -18,12 +18,26 @@ namespace fluentregman_wpf
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+    
+
+
     public partial class MainWindow 
     {
+        public string TitleWin = "Паша лох";
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new Page1();
+
+            PageLoad(new Page1());
+            
+        }
+
+
+        private void PageLoad(Page page)
+        {
+            MainFrame.Content = page;
+            WindowMain.Title = page.Title;
         }
 
         private void Win_MouseDown(object sender, MouseButtonEventArgs e)
