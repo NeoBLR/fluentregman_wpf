@@ -232,7 +232,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="img\toolbar_closed.png" />
+    <Resource Include="img\toolbar_closed_off.png" />
+    <Resource Include="img\toolbar_hide.png" />
+    <Resource Include="img\toolbar_hide_off.png" />
+    <Resource Include="img\toolbar_show.png" />
+    <Resource Include="img\toolbar_show_off.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="img\icon.png" />
   </ItemGroup>

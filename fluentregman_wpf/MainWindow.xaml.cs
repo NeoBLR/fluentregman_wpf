@@ -47,5 +47,49 @@ namespace fluentregman_wpf
                 DragMove();
             }
         }
+
+
+        private void ShowBtn_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //Hide();
+            WindowState = WindowState.Minimized;
+        }
+
+        private void CloseBtn_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //MainWindow mw = new MainWindow();
+            Application.Current.Shutdown();
+            // mw.Close();
+        }
+
+
+        private void HideBtn_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            min_max_size();
+
+        }
+
+        private void min_max_size()
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                WindowState = WindowState.Normal;
+            }
+            else
+            {
+                WindowState = WindowState.Maximized;
+            }
+        }
+
+
+        private void toolbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+                min_max_size();
+
+        }
+
+
+
     }
 }

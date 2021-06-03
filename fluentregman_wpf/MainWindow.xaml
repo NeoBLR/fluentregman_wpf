@@ -81,7 +81,7 @@
     </Window.Resources>
 
     <StackPanel>
-        <Grid Height="25" MouseDown="Win_MouseDown">
+        <Grid Height="25" MouseDown="Win_MouseDown" MouseLeftButtonDown="toolbar_MouseLeftButtonDown">
 
             <Rectangle RadiusX="5" RadiusY="5" Height="50" Margin="0">
                 <Rectangle.Fill>
@@ -92,6 +92,100 @@
                 </Rectangle.Fill>
             </Rectangle>
 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+
+                <Rectangle  x:Name="RecShow" Fill="White" Opacity="0" Grid.Column="1"  MouseDown="ShowBtn_MouseDown"  Panel.ZIndex="3"></Rectangle>
+
+                <Rectangle Grid.Column="1" Fill="White" Panel.ZIndex="1">
+                    <Rectangle.Style>
+                        <Style TargetType="{x:Type Rectangle}">
+                            <Setter Property="Opacity" Value="0"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=RecShow}" Value="True">
+                                    <Setter Property="Opacity" Value="0.5"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Rectangle.Style>
+                </Rectangle>
+
+                <Image Grid.Column="1" x:Name="ShowBtn" Height="20" Width="20" Margin="0 0 3 0" Panel.ZIndex="2">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/img/toolbar_show_off.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=RecShow}" Value="True">
+                                    <Setter Property="Source" Value="/img/toolbar_show.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <Rectangle  x:Name="HideShow" Fill="White" Opacity="0" Grid.Column="2"  MouseDown="HideBtn_MouseDown"  Panel.ZIndex="3"></Rectangle>
+
+                <Rectangle Grid.Column="2" Fill="White" Panel.ZIndex="1">
+                    <Rectangle.Style>
+                        <Style TargetType="{x:Type Rectangle}">
+                            <Setter Property="Opacity" Value="0"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=HideShow}" Value="True">
+                                    <Setter Property="Opacity" Value="0.5"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Rectangle.Style>
+                </Rectangle>
+
+                <Image Grid.Column="2" x:Name="HideBtn" Height="20" Width="20" Margin="0 0 3 0" Panel.ZIndex="2">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/img/toolbar_hide_off.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=HideShow}" Value="True">
+                                    <Setter Property="Source" Value="/img/toolbar_hide.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+                <Rectangle  x:Name="CloseShow" Fill="White" Opacity="0" Grid.Column="3"  MouseDown="CloseBtn_MouseDown"  Panel.ZIndex="3"></Rectangle>
+
+                <Rectangle Grid.Column="3" Fill="White" Panel.ZIndex="1">
+                    <Rectangle.Style>
+                        <Style TargetType="{x:Type Rectangle}">
+                            <Setter Property="Opacity" Value="0"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseShow}" Value="True">
+                                    <Setter Property="Opacity" Value="0.5"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Rectangle.Style>
+                </Rectangle>
+
+                <Image Grid.Column="3" x:Name="CloseBtn" Height="20" Width="20" Margin="0 0 3 0" Panel.ZIndex="2">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/img/toolbar_closed_off.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseShow}" Value="True">
+                                    <Setter Property="Source" Value="/img/toolbar_closed.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+            </Grid>
             <Label x:Name="TitleWinL" Content="{Binding Title, ElementName=WindowMain}" HorizontalAlignment="Center" Foreground="White" />
         </Grid>
         <Grid>
