@@ -29,7 +29,7 @@ namespace fluentregman_wpf
         {
             InitializeComponent();
 
-            PageLoad(new Page1());
+            PageLoad(new DataBase());
             
         }
 
