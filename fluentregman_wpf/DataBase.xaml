@@ -57,7 +57,7 @@
                         <TextBox Text="ПОИСК" x:Name="Find" Grid.Column="1" FontSize="23"  Background="#FF31303B" BorderBrush="#7FFFFFFF" Foreground="White" GotFocus="Find_GotFocus" TextChanged="Find_TextChanged" />
 
 
-                        <ComboBox x:Name="Find_ComboBox"  FontSize="23" Background="Black" BorderBrush="{x:Null}" Style="{DynamicResource ComboBoxStyle1}">
+                        <ComboBox x:Name="Find_ComboBox"  FontSize="23" Background="Black" BorderBrush="{x:Null}" Style="{DynamicResource ComboBox_grad}" Foreground="White">
 
                             <ComboBoxItem IsSelected="True">
                                 <StackPanel>
