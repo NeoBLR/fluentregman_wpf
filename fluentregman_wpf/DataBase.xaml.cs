@@ -170,6 +170,9 @@ namespace fluentregman_wpf
 
         }
 
-
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            conect();
+        }
     }
 }

@@ -15,8 +15,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height=".7*"/>
+            <RowDefinition Height=".7*"/>
             <RowDefinition Height="*"/>
 
 
@@ -24,9 +24,10 @@
 
         <Label Content="Администрирование" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="36" />
         <Label Content="Автаматазация Платной Поликлиники&#xD;&#xA;Довляша Гемана Алексеевича ПО309" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#CCFFFFFF" FontSize="24" />
-        <TextBox Grid.Row="2" Text="Логин" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White"/>
-        <TextBox Grid.Row="3" Text="Пароль" Background="#FF31303B"  MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White"/>
-        <Button Content="Войти" HorizontalAlignment="Center" Margin="0,4,0,0" Grid.Row="4" VerticalAlignment="Center" MinWidth="400" MinHeight="60" FontSize="36" Foreground="White" Style="{DynamicResource btn_grad2}" Click="Button_Click">
+        <TextBox x:Name="Login" Grid.Row="2" Text="Логин" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
+        <PasswordBox x:Name="Pass" PasswordChar="*"  Grid.Row="3" Background="#FF31303B"  MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" />
+        <Label Grid.Row="3"  Content="Пороль" Foreground="White"  FontSize="30" Margin="25,15" Visibility="Hidden"/>
+        <Button Content="Войти" Margin="10,4,10,0" Grid.Row="4" MinWidth="400" MinHeight="60" FontSize="30" Foreground="White" Style="{DynamicResource btn_grad2}" Click="Button_Click" VerticalAlignment="Center">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="1,0">
                     <GradientStop Color="#FFE53B" Offset="0"/>
