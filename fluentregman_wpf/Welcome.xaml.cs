@@ -28,11 +28,11 @@ namespace fluentregman_wpf
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click1(object sender, RoutedEventArgs e)
 
         { NavigationService.Navigate(new DataBase()); }
 
-        private void Button_Click2(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             OleDbConnection cn = new OleDbConnection(leDb_string);
 
@@ -43,24 +43,28 @@ namespace fluentregman_wpf
             OleDbCommand oleDbCommand = new OleDbCommand(CommandText, cn);
 
 
+
             //oleDbCommand.ExecuteNonQuery();
 
 
 
-            MessageBox.Show($"{CommandText}");
+            //  MessageBox.Show($"{oleDbCommand.ExecuteScalar().ToString()}");
 
-            MessageBox.Show($"{oleDbCommand.ExecuteNonQuery().ToString()} {Login.Text} {Pass.Password}");
+            // MessageBox.Show($"{oleDbCommand.ExecuteScalar().ToString()} {Login.Text} {Pass.Password}");
 
 
-            cn.Close();
-
-            
-
-            if (false)
+            if ($"{oleDbCommand.ExecuteScalar().ToString()}" == "1")
             {
                 NavigationService.Navigate(new DataBase());
 
             }
+
+            cn.Close();
+
+            //oleDbCommand.ExecuteScalar();
+
+
+         
 
 
 

@@ -184,6 +184,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Add_User.xaml.cs">
+      <DependentUpon>Add_User.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataBase.xaml.cs">
       <DependentUpon>DataBase.xaml</DependentUpon>
     </Compile>
@@ -191,6 +194,10 @@
     <Compile Include="Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
+    <Page Include="Add_User.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DataBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
