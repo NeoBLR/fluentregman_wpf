@@ -325,7 +325,7 @@
                     </Grid>
 
 
-                    <DataGrid x:Name="goJob2" ColumnWidth="*" Grid.Row="2" Margin="0" VerticalAlignment="Top" HeadersVisibility="Column" IsReadOnly="True" RowBackground="#19FFFFFF" HorizontalGridLinesBrush="#4C000000" VerticalGridLinesBrush="#4C000000" Foreground="White" SelectionChanged="goJob_SelectionChanged" SelectionMode="Single">
+                    <DataGrid x:Name="goJob2" ColumnWidth="*" Grid.Row="2" Margin="0" VerticalAlignment="Top" HeadersVisibility="Column" IsReadOnly="True" RowBackground="#19FFFFFF" HorizontalGridLinesBrush="#4C000000" VerticalGridLinesBrush="#4C000000" Foreground="White" SelectionChanged="goJob2_SelectionChanged" SelectionMode="Single">
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                 <Setter Property="Padding" Value="10 0 10 0"/>

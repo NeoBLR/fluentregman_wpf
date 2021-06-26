@@ -72,7 +72,8 @@ namespace fluentregman_wpf
 
             //ProgramStatic.cclient.Show();
         }
-        public int selected_id;
+        public int selected_id_client;
+        public int selected_id_user;
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
@@ -86,7 +87,7 @@ namespace fluentregman_wpf
 
             string[] str = new string[6];
 
-            OleDbCommand oleDbCommand = new OleDbCommand($"DELETE FROM client WHERE Code_Clienta = {selected_id}", cn);
+            OleDbCommand oleDbCommand = new OleDbCommand($"DELETE FROM client WHERE Code_Clienta = {selected_id_client}", cn);
 
             oleDbCommand.ExecuteNonQuery();
 
@@ -175,7 +176,7 @@ namespace fluentregman_wpf
 
             if (row_selected != null)
             {
-                selected_id = Convert.ToInt32(row_selected["Code_Clienta"].ToString());
+                selected_id_client = Convert.ToInt32(row_selected["Code_Clienta"].ToString());
 
                 /*
                 ProgramStatic.cclient.t_surname.Text = row_selected["surname"].ToString();
@@ -195,6 +196,21 @@ namespace fluentregman_wpf
         {
             conect();
             conect2();
+        }
+
+        private void goJob2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid dg = (DataGrid)sender;
+            DataRowView row_selected = dg.SelectedItem as DataRowView;
+
+            if (row_selected != null)
+            {
+                selected_id_user = Convert.ToInt32(row_selected["Cod_User"].ToString());
+
+         
+
+            }
+
         }
     }
 }
