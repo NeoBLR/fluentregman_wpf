@@ -28,8 +28,11 @@ namespace fluentregman_wpf
             InitializeComponent();
         }
 
-
         private void Button_Click(object sender, RoutedEventArgs e)
+
+        { NavigationService.Navigate(new DataBase()); }
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
         {
             OleDbConnection cn = new OleDbConnection(leDb_string);
 
@@ -58,6 +61,8 @@ namespace fluentregman_wpf
                 NavigationService.Navigate(new DataBase());
 
             }
+
+
 
         }
 

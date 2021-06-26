@@ -146,6 +146,27 @@ namespace fluentregman_wpf
             //MessageBox.Show("connected");
         }
 
+        public void conect2()
+        {
+            OleDbConnection cn = new OleDbConnection(leDb_string);
+
+            cn.Open();
+
+            OleDbDataAdapter da = new OleDbDataAdapter("select * from Users", cn);
+            OleDbCommandBuilder cb = new OleDbCommandBuilder(da);
+
+            DataSet ds = new DataSet();
+
+            da.Fill(ds, "Cod_User");
+
+
+            //DatagridXAML.ItemsSource = ds.Tables["Code_Clienta"].DefaultView;
+            goJob2.ItemsSource = ds.Tables["Cod_User"].DefaultView;
+            cn.Close();
+
+            //MessageBox.Show("connected");
+        }
+
         private void goJob_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -173,6 +194,7 @@ namespace fluentregman_wpf
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             conect();
+            conect2();
         }
     }
 }
