@@ -25,16 +25,28 @@ namespace fluentregman_wpf
     public partial class MainWindow 
     {
         public string TitleWin = "Паша лох";
+
+        Page WelcomePage = new Welcome();
+
+   
+
+
+
+
         public MainWindow()
         {
             InitializeComponent();
 
-            PageLoad(new DataBase());
+
+
+
+
+            PageLoad(WelcomePage);
             
         }
 
 
-        private void PageLoad(Page page)
+        public void PageLoad(Page page)
         {
             MainFrame.Content = page;
             WindowMain.Title = page.Title;

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace fluentregman_wpf
 {
-    public class StaticFP
+    public class StaticFP 
     {
         
-
     }
 }

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:fluentregman_wpf"
       mc:Ignorable="d" 
       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks" 
-      d:DesignHeight="450" d:DesignWidth="600"
+      d:DesignHeight="500" d:DesignWidth="600"
       Title="DataBase">
 
     <TabControl Grid.Row="1"  Background="{x:Null}" BorderBrush="{x:Null}"  Foreground="White">

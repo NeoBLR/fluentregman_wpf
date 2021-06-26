@@ -16,7 +16,7 @@
         x:Name="WindowMain"
         Style="{DynamicResource winreg}"
         fw:AcrylicWindow.Enabled="True"
-        Title="Главная)" Height="350" Width="525" MinHeight="350" MinWidth="525" Icon=".\img\icon.png"  >
+        Title="Главная)" Height="550" Width="600" MinHeight="550" MinWidth="500" Icon=".\img\icon.png"  >
     <Window.Resources>
         <ControlTemplate x:Key="WindowTemplateKey" TargetType="{x:Type Window}">
             <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
