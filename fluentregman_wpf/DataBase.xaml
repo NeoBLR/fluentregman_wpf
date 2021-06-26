@@ -270,7 +270,7 @@
 
 
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Foreground="White" Style="{DynamicResource btn_grad}" Background="#19FFFFFF" Click="Button_Click_1">
+                        <Button Grid.Column="0" Foreground="White" Style="{DynamicResource btn_grad}" Background="#19FFFFFF" Click="Button_Add_User">
 
                             <Grid >
                                 <Grid.ColumnDefinitions>

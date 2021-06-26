@@ -24,5 +24,12 @@ namespace fluentregman_wpf
         {
             InitializeComponent();
         }
+
+        private void Clear_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= Clear_GotFocus;
+        }
     }
 }

@@ -10,6 +10,23 @@
       Title="Add_User">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="Login"  Grid.Column="1"  Grid.Row="0" Text="Логин" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
+        <TextBox x:Name="Pass"  Grid.Column="1"  Grid.Row="1" Text="Пароль" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
+        <TextBox x:Name="Fio"  Grid.Column="1"  Grid.Row="2" Text="Фио" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
+        <TextBox x:Name="Rule"  Grid.Column="1"  Grid.Row="3" Text="Доступ" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
+
+
     </Grid>
 </Page>

@@ -212,5 +212,14 @@ namespace fluentregman_wpf
             }
 
         }
+
+
+
+        private void Button_Add_User(object sender, RoutedEventArgs e)
+        {
+            MainWindow Add = new MainWindow(new Add_User(), 1);
+          
+            Add.Show();
+        }
     }
 }

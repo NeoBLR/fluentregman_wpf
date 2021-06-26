@@ -28,7 +28,9 @@ namespace fluentregman_wpf
 
         Page WelcomePage = new Welcome();
 
-   
+        public int CloseMode = 0;
+
+
 
 
 
@@ -36,13 +38,22 @@ namespace fluentregman_wpf
         public MainWindow()
         {
             InitializeComponent();
-
-
-
-
-
             PageLoad(WelcomePage);
             
+        }
+
+        public MainWindow(Page page)
+        {
+            InitializeComponent();
+            PageLoad(page);
+
+        }
+
+        public MainWindow(Page page, int CloseMode)
+        {
+            InitializeComponent();
+            PageLoad(page);
+            this.CloseMode = CloseMode;
         }
 
 
@@ -51,6 +62,8 @@ namespace fluentregman_wpf
             MainFrame.Content = page;
             WindowMain.Title = page.Title;
         }
+
+  
 
         private void Win_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -70,7 +83,15 @@ namespace fluentregman_wpf
         private void CloseBtn_MouseDown(object sender, MouseButtonEventArgs e)
         {
             //MainWindow mw = new MainWindow();
-            Application.Current.Shutdown();
+            if (CloseMode == 0)
+            {
+                Application.Current.Shutdown();
+
+            }
+            else if (CloseMode == 1)
+            {
+                this.Close();
+            }
             // mw.Close();
         }
 
