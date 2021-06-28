@@ -113,7 +113,7 @@
 
 
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Foreground="White" Style="{DynamicResource btn_grad}" Background="#19FFFFFF" Click="Button_Click_1">
+                        <Button Grid.Column="0" Foreground="White" Style="{DynamicResource btn_grad}" Background="#19FFFFFF" Click="Button_Add_Client">
 
                             <Grid >
                                 <Grid.ColumnDefinitions>
@@ -127,7 +127,7 @@
                             </Grid>
 
                         </Button>
-                        <Button Grid.Column="1"   FontSize="20" Foreground="White" Style="{DynamicResource btn_grad}" Background="#19FFFFFF" Click="Button_Click_3">
+                        <Button Grid.Column="1"   FontSize="20" Foreground="White" Style="{DynamicResource btn_grad}" Background="#19FFFFFF" Click="Button_Edit_Client">
                             <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
@@ -284,7 +284,7 @@
                             </Grid>
 
                         </Button>
-                        <Button Grid.Column="1"   FontSize="20" Foreground="White" Style="{DynamicResource btn_grad}" Background="#19FFFFFF" Click="Button_Click_3">
+                        <Button Grid.Column="1"   FontSize="20" Foreground="White" Style="{DynamicResource btn_grad}" Background="#19FFFFFF" >
                             <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>

@@ -190,6 +190,9 @@
     <Compile Include="DataBase.xaml.cs">
       <DependentUpon>DataBase.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Red_Client.xaml.cs">
+      <DependentUpon>Red_Client.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StaticFP.cs" />
     <Compile Include="Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
@@ -215,6 +218,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Red_Client.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

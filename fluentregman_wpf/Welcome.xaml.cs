@@ -21,16 +21,16 @@ namespace fluentregman_wpf
     /// <summary>
     /// Логика взаимодействия для Welcome.xaml
     /// </summary>
+    /// 
     public partial class Welcome : Page
     {
         public Welcome()
         {
             InitializeComponent();
         }
-
         private void Button_Click1(object sender, RoutedEventArgs e)
 
-        { NavigationService.Navigate(new DataBase()); }
+        { NavigationService.Navigate(StaticFP.dbase); }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -55,7 +55,7 @@ namespace fluentregman_wpf
 
             if ($"{oleDbCommand.ExecuteScalar().ToString()}" == "1")
             {
-                NavigationService.Navigate(new DataBase());
+                NavigationService.Navigate(StaticFP.dbase);
 
             }
 

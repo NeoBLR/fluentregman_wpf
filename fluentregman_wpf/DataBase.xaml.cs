@@ -48,22 +48,31 @@ namespace fluentregman_wpf
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        Page pClientAdd = new Red_Client(1);
+       
+
+        private void Button_Add_Client(object sender, RoutedEventArgs e)
         {
+
+            // win.Content = pClient;
+            // win.Show();
+
+
+
+            StaticFP.win_edit.PageLoad(pClientAdd);
+            StaticFP.win_edit.Show();
+
             /*
             add_client add_Client = new add_client();
             add_Client.ShowDialog(); */
         }
+        Page pClientEdit = new Red_Client(0);
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            remove();
-            conect();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Button_Edit_Client(object sender, RoutedEventArgs e)
         {
 
+            StaticFP.win_edit.PageLoad(pClientEdit);
+            StaticFP.win_edit.Show();
             //goJob.SelectedItem
 
 
@@ -72,6 +81,14 @@ namespace fluentregman_wpf
 
             //ProgramStatic.cclient.Show();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            remove();
+            conect();
+        }
+
+
         public int selected_id_client;
         public int selected_id_user;
 

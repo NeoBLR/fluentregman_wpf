@@ -56,6 +56,13 @@ namespace fluentregman_wpf
             this.CloseMode = CloseMode;
         }
 
+        public MainWindow(int CloseMode)
+        {
+            InitializeComponent();
+            this.CloseMode = CloseMode;
+        }
+
+
 
         public void PageLoad(Page page)
         {
@@ -90,7 +97,7 @@ namespace fluentregman_wpf
             }
             else if (CloseMode == 1)
             {
-                this.Close();
+                this.Hide();
             }
             // mw.Close();
         }
