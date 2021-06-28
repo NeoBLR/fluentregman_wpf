@@ -27,7 +27,62 @@ namespace fluentregman_wpf
         {
             InitializeComponent();
         }
+        public class Writedb
+        {
+            public string Code_Clienta { get; set; }
+            public string surname { get; set; }
+            public string firstname { get; set; }
+            public string patronymic { get; set; }
+            public string Date_of_Birth { get; set; }
+            public string passport_ID { get; set; }
+            public string Address { get; set; }
 
+
+            public Writedb()
+            {
+
+            }
+
+            public Writedb(string Code_Clienta, string surname, string firstname, string patronymic, string Date_of_Birth,
+                string passport_ID, string Address)
+            {
+                this.Code_Clienta = Code_Clienta;
+                this.surname = surname;
+                this.firstname = firstname;
+                this.patronymic = patronymic;
+                this.Date_of_Birth = Date_of_Birth;
+                this.passport_ID = passport_ID;
+                this.Address = Address;
+            }
+        }
+
+        public int selected_id;
+        private void goJob_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            DataGrid dg = (DataGrid)sender;
+            DataRowView row_selected = dg.SelectedItem as DataRowView;
+
+            if (row_selected != null)
+            {
+                selected_id = Convert.ToInt32(row_selected["Code_Clienta"].ToString());
+
+                
+                /*
+                
+            pClientAdd.surname.Text = row_selected["surname"].ToString();
+
+              StaticFP.cclient.firsname.Text = row_selected["firstname"].ToString();
+              StaticFP.cclient.patronymic.Text = row_selected["patronymic"].ToString();
+              StaticFP.cclient.birht.Text = row_selected["Date_of_Birth"].ToString();
+              StaticFP.cclient.passport.Text = row_selected["passport_ID"].ToString();
+              StaticFP.cclient.adress.Text = row_selected["Address"].ToString();
+              */
+            }
+
+
+
+        }
 
         public string leDb_string = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=.\\db.mdb";
 
@@ -66,7 +121,8 @@ namespace fluentregman_wpf
             add_client add_Client = new add_client();
             add_Client.ShowDialog(); */
         }
-        Page pClientEdit = new Red_Client(0);
+        public static Page pClientEdit = new Red_Client(0);
+
 
         private void Button_Edit_Client(object sender, RoutedEventArgs e)
         {
@@ -185,29 +241,6 @@ namespace fluentregman_wpf
             //MessageBox.Show("connected");
         }
 
-        private void goJob_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-            DataGrid dg = (DataGrid)sender;
-            DataRowView row_selected = dg.SelectedItem as DataRowView;
-
-            if (row_selected != null)
-            {
-                selected_id_client = Convert.ToInt32(row_selected["Code_Clienta"].ToString());
-
-                /*
-                ProgramStatic.cclient.t_surname.Text = row_selected["surname"].ToString();
-                ProgramStatic.cclient.t_firsname.Text = row_selected["firstname"].ToString();
-                ProgramStatic.cclient.t_patronymic.Text = row_selected["patronymic"].ToString();
-                ProgramStatic.cclient.t_birht.Text = row_selected["Date_of_Birth"].ToString();
-                ProgramStatic.cclient.t_passport.Text = row_selected["passport_ID"].ToString();
-                ProgramStatic.cclient.t_adress.Text = row_selected["Address"].ToString(); */
-
-            }
-
-
-
-        }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {

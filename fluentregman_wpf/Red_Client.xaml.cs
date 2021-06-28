@@ -60,7 +60,7 @@ namespace fluentregman_wpf
             OleDbConnection cn = new OleDbConnection(leDb_string);
 
             cn.Open();
-
+            
             // OleDbDataAdapter da = new OleDbDataAdapter("select * from client", cn);
             // OleDbCommandBuilder cb = new OleDbCommandBuilder(da);
 
@@ -106,12 +106,20 @@ namespace fluentregman_wpf
   
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void red_Click_Edit(object sender, RoutedEventArgs e)
         {
 
         }
+
+        public string[] edit_load_mass = new string[6];
+
+        public void edit_load(string[] edit_load_mass)
+        {
+            this.edit_load_mass = edit_load_mass;
+        }
+       
     }
 }
