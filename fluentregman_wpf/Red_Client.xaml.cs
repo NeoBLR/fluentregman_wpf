@@ -69,7 +69,7 @@ namespace fluentregman_wpf
             str[0] = surname.Text;
             str[1] = firstname.Text;
             str[2] = patronymic.Text;
-            str[3] = Date_of_Birth.Text; //26.05.2021
+            str[3] = DatePickerB.Text; //26.05.2021
             str[4] = passport_ID.Text;
             str[5] = Address.Text;
 
@@ -91,7 +91,7 @@ namespace fluentregman_wpf
 
 
 
-            MessageBox.Show("Добавленно");
+            //MessageBox.Show("Добавленно");
 
 
 
@@ -111,7 +111,41 @@ namespace fluentregman_wpf
 
         private void red_Click_Edit(object sender, RoutedEventArgs e)
         {
+            OleDbConnection cn = new OleDbConnection(leDb_string);
 
+            cn.Open();
+
+            // OleDbDataAdapter da = new OleDbDataAdapter("select * from client", cn);
+            // OleDbCommandBuilder cb = new OleDbCommandBuilder(da);
+
+            string[] str = new string[6];
+
+            str[0] = surname.Text;
+            str[1] = firstname.Text;
+            str[2] = patronymic.Text;
+            str[3] = DatePickerB.Text; //26.05.2021
+            str[4] = passport_ID.Text;
+            str[5] = Address.Text;
+
+
+            string zapros = $"UPDATE client SET surname = '{str[0]}', firstname = '{str[1]}', patronymic = '{str[2]}', Date_of_Birth = '{str[3]}', passport_ID = '{str[4]}', Address = '{str[5]}' WHERE Code_Clienta = {StaticFP.dbase.selected_id_client}";
+
+            //OleDbCommand oleDbCommand = new OleDbCommand($"UPDATE client SET surname = '{t_surname}', firstname = '{t_firsname}', patronymic = '{t_patronymic}', Date_of_Birth = '{t_birht}', passport_ID = '{t_passport}', Address = '{t_adress}' WHERE Code_Clienta = {ProgramStatic.dbase.selected_id}", cn);
+
+            //MessageBox.Show(zapros);
+
+            OleDbCommand oleDbCommand = new OleDbCommand(zapros, cn);
+            oleDbCommand.ExecuteNonQuery();
+
+            cn.Close();
+
+            StaticFP.dbase.remove();
+            StaticFP.dbase.conect();
+
+
+            //UPDATE goods SET price = 150 WHERE num = 2
+
+            //MessageBox.Show("Ok");
         }
 
         public string[] edit_load_mass = new string[6];

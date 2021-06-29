@@ -29,7 +29,7 @@
         </Grid.ColumnDefinitions>
 
         <Label Content="Администрирование" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="36" Grid.ColumnSpan="3"  />
-        <Label Content="Автоматизация Платной Поликлиники&#xD;&#xA;Довляша Гемана Алексеевича ПО309" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#CCFFFFFF" FontSize="24" Grid.ColumnSpan="3" />
+        <Label Content="Автоматизация Платной Поликлиники&#xD;&#xA;Довляша Германа Алексеевича ПО309" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#CCFFFFFF" FontSize="24" Grid.ColumnSpan="3" />
 
         <TextBox x:Name="Login" Grid.ColumnSpan="2" Grid.Column="1"  Grid.Row="2" Text="Логин" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
         <iconPacks:PackIconModern Grid.Column="0"  Grid.Row="2"  Width="80" Height="50" Kind="People" Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,15" />

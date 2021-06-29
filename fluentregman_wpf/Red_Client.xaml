@@ -30,9 +30,11 @@
         <TextBox x:Name="surname"  Grid.Column="1"  Grid.Row="0" Text="surname" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
         <TextBox x:Name="firstname"  Grid.Column="1"  Grid.Row="1" Text="firstname" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
         <TextBox x:Name="patronymic"  Grid.Column="1"  Grid.Row="2" Text="patronymic" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
-        <TextBox x:Name="Date_of_Birth"  Grid.Column="1"  Grid.Row="3" Text="Date_of_Birth" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
+        <DatePicker x:Name="DatePickerB" Height="50"  Margin="25,15" FontSize="25" Grid.Column="1"  Grid.Row="3" Background="#FF31303B" Foreground="Black" Style="{DynamicResource DatePickerIconResizingStyle}"/>
         <TextBox x:Name="passport_ID"  Grid.Column="1"  Grid.Row="4" Text="passport_ID" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
         <TextBox x:Name="Address"  Grid.Column="1"  Grid.Row="5" Text="Address" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
+
+        <TextBox x:Name="Date_of_Birth" Visibility="Hidden" Grid.Column="1"  Grid.Row="3" Text="Date_of_Birth" Background="#FF31303B" MinHeight="50" BorderBrush="#7FFFFFFF" Foreground="White" Margin="25,15" FontSize="30" VerticalAlignment="Center" GotFocus="Clear_GotFocus"/>
 
         <Button x:Name="add" Grid.Row="7"  Grid.ColumnSpan="2" Foreground="White" Style="{DynamicResource btn_grad}" Background="#19FFFFFF" Click="red_Click_Add">
 
@@ -50,7 +52,7 @@
         </Button>
 
 
-        <Button Grid.Row="7" MinHeight="50" x:Name="edit" Grid.ColumnSpan="2"  FontSize="20" Foreground="White" Style="{DynamicResource btn_grad}" Background="#19FFFFFF" Click="red_Click_Add">
+        <Button Grid.Row="7" MinHeight="50" x:Name="edit" Grid.ColumnSpan="2"  FontSize="20" Foreground="White" Style="{DynamicResource btn_grad}" Background="#19FFFFFF" Click="red_Click_Edit">
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

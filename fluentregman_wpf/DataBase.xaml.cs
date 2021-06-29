@@ -56,7 +56,7 @@ namespace fluentregman_wpf
             }
         }
 
-        public int selected_id;
+        //public int selected_id;
         private void goJob_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -65,19 +65,16 @@ namespace fluentregman_wpf
 
             if (row_selected != null)
             {
-                selected_id = Convert.ToInt32(row_selected["Code_Clienta"].ToString());
+                selected_id_client = Convert.ToInt32(row_selected["Code_Clienta"].ToString());
 
-                
-                /*
-                
-            pClientAdd.surname.Text = row_selected["surname"].ToString();
 
-              StaticFP.cclient.firsname.Text = row_selected["firstname"].ToString();
-              StaticFP.cclient.patronymic.Text = row_selected["patronymic"].ToString();
-              StaticFP.cclient.birht.Text = row_selected["Date_of_Birth"].ToString();
-              StaticFP.cclient.passport.Text = row_selected["passport_ID"].ToString();
-              StaticFP.cclient.adress.Text = row_selected["Address"].ToString();
-              */
+
+                StaticFP.pClientEdit.surname.Text = row_selected["surname"].ToString();
+                StaticFP.pClientEdit.firstname.Text = row_selected["firstname"].ToString();
+                StaticFP.pClientEdit.patronymic.Text = row_selected["patronymic"].ToString();
+                StaticFP.pClientEdit.DatePickerB.Text = row_selected["Date_of_Birth"].ToString();
+                StaticFP.pClientEdit.passport_ID.Text = row_selected["passport_ID"].ToString();
+                StaticFP.pClientEdit.Address.Text = row_selected["Address"].ToString();
             }
 
 
@@ -103,7 +100,6 @@ namespace fluentregman_wpf
             }
         }
 
-        Page pClientAdd = new Red_Client(1);
        
 
         private void Button_Add_Client(object sender, RoutedEventArgs e)
@@ -114,21 +110,23 @@ namespace fluentregman_wpf
 
 
 
-            StaticFP.win_edit.PageLoad(pClientAdd);
+            StaticFP.win_edit.PageLoad(StaticFP.pClientAdd);
             StaticFP.win_edit.Show();
 
             /*
             add_client add_Client = new add_client();
             add_Client.ShowDialog(); */
         }
-        public static Page pClientEdit = new Red_Client(0);
 
 
         private void Button_Edit_Client(object sender, RoutedEventArgs e)
         {
 
-            StaticFP.win_edit.PageLoad(pClientEdit);
+            StaticFP.win_edit.PageLoad(StaticFP.pClientEdit);
             StaticFP.win_edit.Show();
+
+            
+
             //goJob.SelectedItem
 
 
