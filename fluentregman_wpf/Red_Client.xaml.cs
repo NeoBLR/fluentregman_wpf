@@ -142,6 +142,8 @@ namespace fluentregman_wpf
             StaticFP.dbase.remove();
             StaticFP.dbase.conect();
 
+            StaticFP.win_edit.Hide();
+
 
             //UPDATE goods SET price = 150 WHERE num = 2
 

@@ -58,14 +58,15 @@ namespace fluentregman_wpf
                 NavigationService.Navigate(StaticFP.dbase);
 
             }
+            else
+            {
+                MessageBox.Show("Неверный Логин или Пароль", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
+                
+            }
 
             cn.Close();
 
             //oleDbCommand.ExecuteScalar();
-
-
-         
-
 
 
         }
